@@ -1,9 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Todo List Api",
-        "description": "Demo Todo List Api",
-        "version": "1.0"
+        "title": "My First API",
+        "version": "0.1"
     },
     "paths": {
         "/api/todo/store": {
@@ -311,8 +310,5 @@
                 }
             }
         }
-    },
-    "security": [
-        []
-    ]
+    }
 }
