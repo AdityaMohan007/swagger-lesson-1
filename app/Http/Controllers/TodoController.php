@@ -10,7 +10,8 @@ class TodoController extends Controller
 {
     protected $todo;
 
-    public function __construct(Todo $todo){
+    public function __construct(Todo $todo)
+    {
         $this->todo = $todo;
     }
 
@@ -61,7 +62,8 @@ class TodoController extends Controller
      *      )
      * )
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $todo = $this->todo->createTodo($request->all());
         return response()->json($todo);
     }
@@ -112,7 +114,8 @@ class TodoController extends Controller
      *      )
      * )
      */
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         try {
             $todo = $this->todo->updateTodo($id,$request->all());
             return response()->json($todo);
@@ -145,7 +148,8 @@ class TodoController extends Controller
      *     )
      * )
      */
-    public function get($id){
+    public function get($id)
+    {
         $todo = $this->todo->getTodo($id);
         if($todo){
             return response()->json($todo);
@@ -198,7 +202,8 @@ class TodoController extends Controller
      *     )
      * )
      */
-    public function gets(){
+    public function gets()
+    {
         $todos = $this->todo->getsTodo();
         return response()->json(["rows"=>$todos]);
     }
@@ -223,7 +228,8 @@ class TodoController extends Controller
      *     )
      * )
      */
-    public function delete($id){
+    public function delete($id)
+    {
         try {
             $todo = $this->todo->deleteTodo($id);
             return response()->json(["msg"=>"delete todo success"]);
@@ -231,4 +237,6 @@ class TodoController extends Controller
             return response()->json(["msg"=>$exception->getMessage()],404);
         }
     }
+
+
 }

@@ -19,7 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(["prefix"=>"todo"],function(){
+Route::group(["prefix"=>"todo"],function()
+{
     Route::get("/get/{id}",[TodoController::class,"get"]);
     Route::get("/gets",[TodoController::class,"gets"]);
     Route::post("/store",[TodoController::class,"store"]);
